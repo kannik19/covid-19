@@ -97,8 +97,8 @@ $(function () {
           datasets: [{
             label: "Total ",
             lineTension: 0.3,
-            backgroundColor: "rgba(246, 194, 62, 0.5)",
-            borderColor: "rgba(246, 194, 62, 1)",
+            backgroundColor: "#A29ACF",
+            borderColor: "#685EA5 ",
             pointRadius: 3,
             pointBackgroundColor: "rgba(231, 74, 59, 1)",
             pointBorderColor: "rgba(231, 74, 59, 1)",
@@ -190,7 +190,7 @@ $(function () {
         labels: ["Confirmed", "Recovered", "Deaths"],
         datasets: [{
           label: "Total",
-          backgroundColor: "#4e73df",
+          backgroundColor: "#A29ACF",
           hoverBackgroundColor: "#2e59d9",
           borderColor: "#4e73df",
           data: [confirmed, recovered, deaths],
