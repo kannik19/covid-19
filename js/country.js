@@ -3,13 +3,14 @@ var urlParams = new URLSearchParams(window.location.search);
 console.log(urlParams.get('country'));
 var country = urlParams.get('country');
 $("#country").html(country);
-var Total = 0;
+
 var url = "https://pomber.github.io/covid19/timeseries.json";
 
   $.getJSON(url, function(result) {
     var selectedCountry = result[country];
+    var total = selectedCountry.length;
     console.log(selectedCountry);
-    for(var i=0; i<selectedCountry.length; i++){
+    for(var i=0; i<total; i++){
         var row = `<tr>
         <th scope="row">${selectedCountry[i].date}</th>
         <td>${selectedCountry[i].confirmed}</td>
@@ -18,5 +19,17 @@ var url = "https://pomber.github.io/covid19/timeseries.json";
                 </tr>`;
         $("#data").append(row);
     }
+    var confirmed = selectedCountry[total - 1].confirmed ;
+    var deaths = selectedCountry[total - 1].deaths;
+    var recovered = selectedCountry[total - 1].recovered;
+
+    $("#confirmed").append(confirmed);
+    $("#deaths").append(deaths);
+    $("#recovered").append(recovered);
+
   });
+  
+
+
+  
 });
