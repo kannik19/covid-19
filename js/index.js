@@ -95,14 +95,14 @@ $(function () {
         data: {
           labels: [totalweek4,totalweek3,totalweek2,totalweek1],
           datasets: [{
-            label: "Total ",
+            label: "Total recovered",
             lineTension: 0.3,
             backgroundColor: "#A29ACF",
             borderColor: "#685EA5 ",
             pointRadius: 3,
             pointBackgroundColor: "#2D2D6D",
             pointBorderColor: "#2D2D6D",
-            pointHoverRadius: 3,
+            pointHoverRadius: 5,
             pointHoverBackgroundColor: "#130B2A",
             pointHoverBorderColor: "#130B2A",
             pointHitRadius: 10,
@@ -171,7 +171,7 @@ $(function () {
             callbacks: {
               label: function (tooltipItem, chart) {
                 var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-                return datasetLabel + number_format(tooltipItem.yLabel);
+                return datasetLabel +' : '+ number_format(tooltipItem.yLabel)+ ' cases ';
               }
             }
           }
@@ -258,7 +258,7 @@ $(function () {
           callbacks: {
             label: function (tooltipItem, chart) {
               var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-              return datasetLabel + ': ' + number_format(tooltipItem.yLabel) + ' cases ';
+              return datasetLabel + ' : ' + number_format(tooltipItem.yLabel) + ' cases ';
             }
           }
         },
